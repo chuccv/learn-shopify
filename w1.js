@@ -51,14 +51,19 @@ async function mapData() {
         // console.log(usersFilter);
 
         //5. Reformat the data with the count of comments and posts
-        users.map(function (user) {
-            user.postsCount = user.posts.reduce(function (sum) {
-                return sum + 1
-            }, 0);
-            user.commentsCount = user.comments.reduce(function (sum) {
-                return sum + 1
-            }, 0);
+        // users.map(function (user) {
+        //     user.postsCount = user.posts.reduce(function (sum) {
+        //         return sum + 1
+        //     }, 0);
+        //     user.commentsCount = user.comments.reduce(function (sum) {
+        //         return sum + 1
+        //     }, 0);
+        // });
+        users.map(user => {
+            user.postsCount = user.posts.reduce((sum) => sum + 1, 0);
+            user.commentsCount = user.comments.reduce((sum) => sum + 1, 0);
         });
+
         // console.log(users);
 
         //6.Who is the user with the most comments/?
